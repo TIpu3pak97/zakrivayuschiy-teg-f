@@ -20,6 +20,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font);
+  font-variation-settings: 'wght' var(--main-font-weight);
   background-color: var(--background-color);
   color: var(--accent-text-color);
   background-image: var(--bg-gradient);
@@ -163,7 +164,7 @@ main {
   background-blend-mode: hard-light;
 }
 
-.image-in-section{
+.image-in-section {
   max-width: 696px;
   border-bottom: 2px solid var(--border-color);
 }
@@ -175,11 +176,15 @@ main {
   font-family: var(--accent-font);
   font-size: 14px;
   line-height: 14px;
-  -webkit-text-stroke: 1px var(--text-shadow);
-  text-stroke: 1px var(--text-shadow);
+  text-shadow: 1px 1px 0 var(--text-shadow),
+    -1px -1px 0 var(--text-shadow),
+    1px -1px 0 var(--text-shadow),
+    -1px 1px 0 var(--text-shadow);
   color: var(--image-tag);
   mix-blend-mode: hard-light;
 }
+
+
 
 .image-in-section__base {
   filter: blur(0.1rem) opacity(0.8);
@@ -213,12 +218,11 @@ main {
   filter: brightness(150%) contrast(120%);
 }
 
-@not-supports((text-stroke: 1px var(--text-shadow)) or (-webkit-text-stroke: 1px var(--text-shadow))) {
+@supports((text-stroke: 1px var(--text-shadow)) or (-webkit-text-stroke: 1px var(--text-shadow))) {
   .image-tag {
-    text-shadow: 1px 1px 0 var(--text-shadow),
-    -1px -1px 0 var(--text-shadow),
-    1px -1px 0 var(--text-shadow),
-    -1px 1px 0 var(--text-shadow);
+    -webkit-text-stroke: 1px var(--text-shadow);
+    text-stroke: 1px var(--text-shadow);
+    text-shadow: none;
   }
 }
 
@@ -241,6 +245,8 @@ main {
   background-color: var(--background-color);
   display: flex;
   align-items: center;
+  border: 2px solid rgba(0, 0, 0, 0);
+  padding: 0;
 }
 
 .card__like-button {
@@ -266,7 +272,7 @@ main {
   mix-blend-mode: difference;
 }
 
-.card__like-button:focus { 
+.card__like-button:focus {
   outline: none;
   box-shadow: 2px 2px var(--border-color);
 }
@@ -286,11 +292,6 @@ main {
 
 .card__like-button:hover::before {
   transform: scaleX(1);
-}
-
-.card__icon-button {
-  border: 2px solid rgba(0, 0, 0, 0);
-  padding: 0;
 }
 
 .card__icon-button:focus {
@@ -437,7 +438,6 @@ dialog[open] {
   max-width: 353px;
   font-size: 14px;
   line-height: 21px;
-  max-width: 353px;
   height: 191px;
 }
 
@@ -478,7 +478,7 @@ dialog[open]::backdrop {
       margin: 100px 0 0 0;
   }
 
-  .image-tag{
+  .image-tag {
     right: 11px;
   }
 }
