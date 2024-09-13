@@ -39,21 +39,20 @@
   border: 2px solid var(--border-color);
   width: 100%;
   max-height:368px;
-  min-height: 327px;
   margin-bottom: 100px;
   max-width: 700px;
 }
 
 h1 {
-  font-size: clamp(49px, 100vh * 0.0677083, 65px);
-  line-height: clamp(49px, 100vh * 0.0677083, 65px);
+  font-size: clamp(49px, 6.77083vh, 65px);
+  line-height: clamp(49px, 6.77083vh, 65px);
   margin-bottom: 20px;
-  margin-top: clamp(120px, 138px, 138px);
+  margin-top: 138px;
 }
 
 h2 {
-  font-size: clamp(14px, 100vh * 0.0239583, 23px);
-  line-height: clamp(14px, 100vh * 0.0239583, 23px);
+  font-size: clamp(14px, 2.09895052vh, 23px);
+  line-height: clamp(14px, 2.09895052vh, 23px);
   text-align: center;
   margin-bottom: 24px;
   text-transform: uppercase;
@@ -165,7 +164,7 @@ main {
 }
 
 .image-in-section {
-  max-width: 696px;
+  width: 100%;
   border-bottom: 2px solid var(--border-color);
 }
 
@@ -203,7 +202,7 @@ main {
 }
 
 .image-in-section__support {
-  filter: saturate(140%) hue-rotate(200deg) ;
+  filter: saturate(140%);
 }
 
 .image-in-section__indian {
@@ -396,7 +395,6 @@ footer {
   padding: 15px 20px;
   border: 2px solid var(--border-color);
   transition: box-shadow ease 0.3s;
-  
 }
 
 .card__save-button::before {
@@ -423,6 +421,7 @@ footer {
 .floppy {
   color: var(--text-for-button);
   mix-blend-mode: difference;
+  width: ;
 }
 
 dialog[open] {
@@ -435,14 +434,15 @@ dialog[open] {
   border: 2px solid var(--border-color);
   color: var(--accent-font);
   font-family: var(--accent-font);
-  max-width: 353px;
+  max-width: 357px;
   font-size: 14px;
   line-height: 21px;
-  height: 191px;
+  height: 193px;
 }
 
 dialog[open] .dialog__text {
   height: 63px;
+  max-width: 234px;
 }
 
 dialog[open] button {
@@ -464,10 +464,6 @@ dialog[open] div {
   gap: 20px;
 }
 
-dialog[open] p {
-  max-width: 234px;
-}
-
 dialog[open]::backdrop {
   background-color: rgb(0 0 0 / 0.75);
   backdrop-filter: blur(7px);
@@ -477,8 +473,29 @@ dialog[open]::backdrop {
   .page {
       margin: 100px 0 0 0;
   }
+  
+  h1 {
+    margin-top: 120px;
+  }
+
+  .card__save-button {
+    flex-direction: column;
+  }
+
+  .card__save-button .floppy {
+    width: 29px;
+    height: 29px;
+  }
 
   .image-tag {
     right: 11px;
+  }
+
+  dialog[open] {
+    padding: 30px 42px;
+  }
+
+  dialog[open] .dialog__text {
+    max-width: 198px;
   }
 }
