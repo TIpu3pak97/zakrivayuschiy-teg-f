@@ -149,6 +149,10 @@
   filter: saturate(160%);
 }
 
+.saturate-and-blur {
+  filter: saturate(200%) blur(0.1rem);
+}
+
 .sepia {
   filter: sepia(40%);
 }
