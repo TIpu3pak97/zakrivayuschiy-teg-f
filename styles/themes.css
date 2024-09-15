@@ -10,18 +10,16 @@
     --bg-gradient: repeating-linear-gradient(#000 0px, #000 2px, transparent 2px, transparent 4px), repeating-linear-gradient(90deg,#000 0px, #000 2px, transparent 2px, transparent 4px), linear-gradient(#007f0c, #004306);
 }
 
-@media (prefers-color-scheme: light) {
-    :root.theme-light {
-        --accent-text-color: #000000;
-        --background-color: white;
-        --border-color: #000000;
-        --text-shadow: rgba(255, 255, 255, 0.5);
-        --image-tag: rgba(0, 0, 0, 1);
-        --text-for-button: white;
-        --main-font-weight: 400;
-        --accent-font-weight: 700;
-        --bg-gradient: repeating-linear-gradient(#d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px), repeating-linear-gradient(90deg,#d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px), linear-gradient(#e7e7e7 0.01%, #1a1a1a);
-    }
+:root.theme-light {
+    --accent-text-color: #000000;
+    --background-color: white;
+    --border-color: #000000;
+    --text-shadow: rgba(255, 255, 255, 0.5);
+    --image-tag: rgba(0, 0, 0, 1);
+    --text-for-button: white;
+    --main-font-weight: 400;
+    --accent-font-weight: 700;
+    --bg-gradient: repeating-linear-gradient(#d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px), repeating-linear-gradient(90deg,#d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px), linear-gradient(#e7e7e7 0.01%, #1a1a1a);
 }
 
 @madia (prefers-color-scheme: dark) {

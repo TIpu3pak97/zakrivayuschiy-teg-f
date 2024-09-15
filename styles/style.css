@@ -92,6 +92,31 @@
 .button-with-border {
   background-color: var(--background-color);
   border: 2px solid var(--border-color);
+  background-blend-mode: difference;
+  position: relative;
+  box-shadow: none;
+  transition: box-shadow ease 0.3s;
+}
+
+.button-with-border::before {
+  position: absolute;
+  content: '';
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-text-color);
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: top left;
+}
+
+.button-with-border:focus {
+  outline: none;
+}
+
+.button-with-border:focus-visible {
+  box-shadow: 2px 2px var(--border-color);
 }
 
 .section {
@@ -133,31 +158,31 @@
   mix-blend-mode: hard-light;
 }
 
-.blur-and-opacity {
+.filter-blur-and-opacity {
   filter: blur(0.1rem) opacity(0.8);
 }
 
-.blur {
+.filter-blur {
   filter: blur(0.1rem);
 }
 
-.grayscale {
+.filter-grayscale {
   filter: grayscale(60%);
 }
 
-.saturate {
+.filter-saturate {
   filter: saturate(160%);
 }
 
-.saturate-and-blur {
+.filter-saturate-and-blur {
   filter: saturate(200%) blur(0.1rem);
 }
 
-.sepia {
+.filter-sepia {
   filter: sepia(40%);
 }
 
-.brightnes-and-contrast {
+.filter-brightnes-and-contrast {
   filter: brightness(150%) contrast(120%);
 }
 
@@ -192,10 +217,6 @@
 }
 
 .card__like-button {
-  background-blend-mode: difference;
-  position: relative;
-  box-shadow: none;
-  transition: box-shadow ease 0.3s;
   width: 130px;
   height: 38px;
 }
@@ -212,25 +233,8 @@
   mix-blend-mode: difference;
 }
 
-.card__like-button:focus-visible {
-  box-shadow: 2px 2px var(--border-color);
-}
-
-.card__like-button::before {
-  position: absolute;
-  content: '';
-  right: 0px;
-  bottom: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: var(--accent-text-color);
-  transform: scaleX(0);
-  transition: transform 0.5s ease-in-out;
-  transform-origin: top left;
-}
-
 .card-save {
-  margin: 0px 0 100px 0;
+  margin-bottom: 100px;
 }
 
 .card__save-button {
@@ -239,23 +243,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-blend-mode: difference;
-  position: relative;
   padding: 15px 20px;
-  transition: box-shadow ease 0.3s;
-}
-
-.card__save-button::before {
-  position: absolute;
-  content: '';
-  right: 0px;
-  bottom: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: var(--accent-text-color);
-  transform: scaleX(0);
-  transition: transform 0.5s ease-in-out;
-  transform-origin: top left;
 }
 
 .floppy {
@@ -272,13 +260,13 @@ dialog {
   max-width: 357px;
   font-size: 14px;
   line-height: 21px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 dialog[open] {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .dialog__text {

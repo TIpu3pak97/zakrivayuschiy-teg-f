@@ -7,6 +7,10 @@
     animation: opacityChange 0.3s ease forwards;
 }
   
+.theme-menu__button:focus {
+    outline: none;
+}
+
 .theme-menu__button:focus-visible {
     animation: opacityChange 0.3s ease forwards;
 }
@@ -41,7 +45,7 @@
     }
 }
 
-.card__like-button:hover::before, .card__save-button:hover::before {
+.button-with-border:hover::before {
     transform: scaleX(1);
 }
 
@@ -51,7 +55,7 @@
 }
   
 .contour {
-    transition: 0.3s linear;
+    transition: 0.1s linear;
     fill: var(--border-color);
 }
   
@@ -125,7 +129,7 @@
     }
 }
   
-.like-icon.is-liked .spark {
+.like-icon.is-liked .sparks {
     animation: sparksSplash 0.3s ease-in 1 alternate;
     animation-delay: 0.3s;
 }
